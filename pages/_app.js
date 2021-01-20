@@ -1,4 +1,6 @@
 import '../styles/globals.css'
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Hydrate } from 'react-query/hydration';
 import { ChakraProvider } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 import { ProvideAuth } from '@/lib/auth';
@@ -20,12 +22,18 @@ const theme = extendTheme({
   fonts
 });
 
+const queryClient = new QueryClient();
+
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <ProvideAuth>
-        <Component {...pageProps} />
-      </ProvideAuth>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <ProvideAuth>
+            <Component {...pageProps} />
+          </ProvideAuth>
+        </Hydrate>
+      </QueryClientProvider>
     </ChakraProvider>
   );
 }
