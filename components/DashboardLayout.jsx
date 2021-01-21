@@ -39,18 +39,8 @@ export const DashboardLayout = ({ children }) => {
         p={8}
         justifyContent="center"
       >
-        <Flex
-          maxWidth="800px"
-          w="100%"
-          flexDirection="column"
-        >
-          <Breadcrumb>
-            <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink color="black">Sites</BreadcrumbLink>
-            </BreadcrumbItem>
-          </Breadcrumb>
-          <Heading color="black" mb={4}>Sites</Heading>
-          { children }
+        <Flex margin="0 auto" direction="column" maxW="1250px" w="full" px={[0, 8, 8]}>
+          {children}
         </Flex>
       </Flex>
     </>

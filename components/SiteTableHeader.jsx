@@ -6,12 +6,12 @@ import {
   Heading,
   Flex,
   Box
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
-import AddSiteModal from './AddSiteModal';
+import { AddSiteModal } from './AddSiteModal';
 
-const SiteTableHeader = ({ isPaidAccount }) => (
-  <Box mx={4}>
+export const SiteTableHeader = ({ }) => (
+  <Box>
     <Breadcrumb>
       <BreadcrumbItem>
         <BreadcrumbLink>Sites</BreadcrumbLink>
@@ -19,9 +19,7 @@ const SiteTableHeader = ({ isPaidAccount }) => (
     </Breadcrumb>
     <Flex justifyContent="space-between">
       <Heading mb={8}>My Sites</Heading>
-      {isPaidAccount && <AddSiteModal>+ Add Site</AddSiteModal>}
+      <AddSiteModal>+ Add Site</AddSiteModal>
     </Flex>
   </Box>
 );
-
-export default SiteTableHeader;

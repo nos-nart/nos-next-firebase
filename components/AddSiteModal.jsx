@@ -17,20 +17,22 @@ import {
 import { useForm } from 'react-hook-form';
 import { createSite } from '@/lib/firestore';
 import { useAuth } from '@/lib/auth';
+import { mutate } from 'swr';
 
-export const AddSiteModal = () => {
+export const AddSiteModal = ({ children }) => {
   const auth = useAuth();
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { handleSubmit, register } = useForm();
   const onCreateSite = ({ name, url }) => {
-    createSite({
+    const newSite = {
       authorId: auth.user.uid,
       createAt: new Date().toISOString(),
       name,
       url
-    });
+    }
+    const { id } = createSite(newSite);
     onClose();
     toast({
       title: 'Success!',
@@ -39,11 +41,18 @@ export const AddSiteModal = () => {
       duration: 5000,
       isClosable: true
     });
+    mutate(
+      '/api/sites',
+      async (data) => ({
+        sites: [{ id, ...newSite }, ...data.sites]
+      }),
+      false
+    )
   };
 
   return (
     <>
-      <Button onClick={onOpen}>Add your first site</Button>
+      <Button onClick={onOpen}>{ children }</Button>
       <Modal
         isOpen={isOpen}
         onClose={onClose}

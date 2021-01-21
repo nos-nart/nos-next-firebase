@@ -1,23 +1,23 @@
 import React from 'react';
-import { useAuth } from '@/lib/auth';
-import { EmptyState, DashboardLayout, SiteTableSkeleton } from '@/components/index';
-import { useSites } from '@/hooks/useSites';
+import { EmptyState, DashboardLayout, SiteTableSkeleton, SiteTable, SiteTableHeader } from '@/components/index';
+import fetcher from '@/utils/fetcher';
+import useSWR from 'swr'
 
 const Dashboard = () => {
-  const auth = useAuth();
-  const siteQuery = useSites();
-  console.log('siteQuery: ', siteQuery);
+  const { data } = useSWR('/api/sites', fetcher);
 
-  if (!auth.user) {
+  if (!data) {
     return (
       <DashboardLayout>
+        <SiteTableHeader />
         <SiteTableSkeleton />
       </DashboardLayout>
     )
   }
   return (
     <DashboardLayout>
-      <EmptyState />
+      <SiteTableHeader />
+      {data ? <SiteTable sites={data.sites}/> : <EmptyState />}
     </DashboardLayout>
   );
 }
