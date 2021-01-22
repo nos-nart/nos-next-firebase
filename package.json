@@ -8,11 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "firebase": "^8.1.2",
+    "next": "10.0.0",
     "@chakra-ui/react": "^1.1.5",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "dayjs": "^1.10.3",
-    "firebase": "^8.1.1",
     "firebase-admin": "^9.4.2",
     "framer-motion": "^3.2.1",
     "next": "^10.0.5",
