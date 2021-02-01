@@ -1,4 +1,4 @@
-import db from '@/lib/firebase-admin';
+import { db } from '@/lib/firebase-admin';
 import { getAllSites } from '@/lib/firestore-admin';
 
 export default async (req, res) => {

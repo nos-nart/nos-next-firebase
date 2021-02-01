@@ -39,7 +39,7 @@ export const DashboardLayout = ({ children }) => {
         p={8}
         justifyContent="center"
       >
-        <Flex margin="0 auto" direction="column" maxW="1250px" w="full" px={[0, 8, 8]}>
+        <Flex margin="0 auto" direction="column" maxW="1250px" w="full" px={[0, 8, 8]} alignItems="center">
           {children}
         </Flex>
       </Flex>

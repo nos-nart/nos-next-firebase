@@ -15,7 +15,7 @@ export const Feedback = ({ author, text, createdAt, isLast }) => {
           {author}
         </Heading>
       </Flex>
-      <Text color="gray.500" mb={4} fontSize="xs">
+      <Text color="gray.500" my={2} fontSize="xs">
         {dayjs(createdAt).format('MMM D, YYYY h:mm A')}
       </Text>
       <Text color="gray.800">{text}</Text>
