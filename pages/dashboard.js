@@ -1,10 +1,13 @@
 import React from 'react';
+import useSWR from 'swr';
+
 import { EmptyState, DashboardLayout, SiteTableSkeleton, SiteTable, SiteTableHeader } from '@/components/index';
 import fetcher from '@/utils/fetcher';
-import useSWR from 'swr'
+import { useAuth } from '@/lib/auth';
 
 const Dashboard = () => {
-  const { data } = useSWR('/api/sites', fetcher);
+  const { user } = useAuth();
+  const { data } = useSWR(user ? ['/api/sites', user.token] : null, fetcher);
 
   if (!data) {
     return (
