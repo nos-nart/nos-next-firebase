@@ -11,7 +11,7 @@ import {
 import { AddSiteModal } from './AddSiteModal';
 
 export const SiteTableHeader = ({ }) => (
-  <Box>
+  <Box w="100%">
     <Breadcrumb>
       <BreadcrumbItem>
         <BreadcrumbLink>Sites</BreadcrumbLink>

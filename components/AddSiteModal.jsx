@@ -20,14 +20,14 @@ import { useAuth } from '@/lib/auth';
 import { mutate } from 'swr';
 
 export const AddSiteModal = ({ children }) => {
-  const auth = useAuth();
+  const { user } = useAuth();
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { handleSubmit, register } = useForm();
   const onCreateSite = ({ name, url }) => {
     const newSite = {
-      authorId: auth.user.uid,
+      authorId: user.uid,
       createAt: new Date().toISOString(),
       name,
       url
@@ -42,7 +42,7 @@ export const AddSiteModal = ({ children }) => {
       isClosable: true
     });
     mutate(
-      '/api/sites',
+      ['/api/sites', user.ya],
       async (data) => ({
         sites: [{ id, ...newSite }, ...data.sites]
       }),

@@ -7,7 +7,8 @@ import { useAuth } from '@/lib/auth';
 
 const Dashboard = () => {
   const { user } = useAuth();
-  const { data } = useSWR(user ? ['/api/sites', user.token] : null, fetcher);
+  console.log('user: ', user);
+  const { data } = useSWR(user ? ['/api/sites', user.ya] : null, fetcher);
 
   if (!data) {
     return (
