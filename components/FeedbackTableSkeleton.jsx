@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Skeleton } from '@chakra-ui/core';
+import { Box, Skeleton } from '@chakra-ui/react';
 import { Table, Tr, Th, Td } from './Table';
 
 const SkeletonRow = ({ width }) => (
@@ -19,9 +19,9 @@ const SkeletonRow = ({ width }) => (
   </Box>
 );
 
-const FeedbackTableSkeleton = () => {
+export const FeedbackTableSkeleton = () => {
   return (
-    <Table>
+    <Table w="100%">
       <thead>
         <Tr>
           <Th>Name</Th>
@@ -41,5 +41,3 @@ const FeedbackTableSkeleton = () => {
     </Table>
   );
 };
-
-export default FeedbackTableSkeleton;

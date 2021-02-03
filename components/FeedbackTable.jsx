@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/react';
 
 import { Table, Tr, Th } from './Table';
 import { FeedbackRow } from './FeedbackRow';
 
-const FeedbackTable = (props) => {
+export const FeedbackTable = (props) => {
   return (
-    <Box overflowX="scroll">
+    <Box overflowX="scroll" w="full">
       <Table w="full">
         <thead>
           <Tr>
@@ -26,5 +26,3 @@ const FeedbackTable = (props) => {
     </Box>
   );
 };
-
-export default FeedbackTable;

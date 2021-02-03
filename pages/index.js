@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { useAuth } from '@/lib/auth';
 import { Logo } from '@/components/svgs';
 import { Box, Flex } from "@chakra-ui/react";
@@ -8,6 +9,17 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          if (document.cookie && document.cookie.includes('next-firebase-auth')) {
+            window.location.href = "/sites"
+          }
+        `
+          }}
+        />
+      </Head>
       <Box bg="gray.100" py={16} px={4}>
         <Flex as="main" py direction="column" maxW="700px" margin="0 auto">
           <Logo />

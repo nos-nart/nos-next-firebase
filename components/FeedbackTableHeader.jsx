@@ -7,11 +7,11 @@ import {
   Heading,
   Flex,
   Box
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 export const FeedbackTableHeader = () => {
   return (
-    <Box mx={4}>
+    <Box mx={4} w="100%">
       <Breadcrumb>
         <BreadcrumbItem>
           <NextLink href="/feedback" passHref>
