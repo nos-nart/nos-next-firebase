@@ -12,7 +12,7 @@
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "dayjs": "^1.10.3",
-    "firebase": "^8.1.2",
+    "firebase": "^8.2.2",
     "firebase-admin": "^9.4.2",
     "framer-motion": "^3.2.1",
     "js-cookie": "^2.2.1",
