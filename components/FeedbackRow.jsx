@@ -3,6 +3,7 @@ import { Box, Code, Switch } from '@chakra-ui/react';
 import { mutate } from 'swr';
 
 import { Td } from './Table';
+import { DeleteFeedbackButton } from './DeleteFeedbackButton';
 import { useAuth } from '@/lib/auth';
 import { updateFeedback } from '@/lib/firestore';
 
@@ -33,7 +34,9 @@ export const FeedbackRow = ({ id, author, text, route, status }) => {
       <Td>
         <Switch colorScheme="green" onChange={onToggleStatus} isChecked={isChecked} />
       </Td>
-      <Td></Td>
+      <Td>
+        <DeleteFeedbackButton feedbackId={id} />
+      </Td>
     </Box>
   )
 }

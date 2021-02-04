@@ -42,10 +42,12 @@ export const AddSiteModal = ({ children }) => {
       isClosable: true
     });
     mutate(
-      ['/api/sites', user.ya],
-      async (data) => ({
-        sites: [{ id, ...newSite }, ...data.sites]
-      }),
+      ['/api/sites', user._lat],
+      async (data) => {
+        return ({
+          sites: [{ id, ...newSite }, ...data.sites]
+        })
+      },
       false
     )
   };

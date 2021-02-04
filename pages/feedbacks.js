@@ -12,7 +12,7 @@ import {
 
 const AllFeedback = () => {
   const { user } = useAuth();
-  const { data } = useSWR(user ? ['/api/feedbacks', user.ya] : null, fetcher);
+  const { data } = useSWR(user ? ['/api/feedbacks', user._lat] : null, fetcher);
 
   if (!data) {
     return (
