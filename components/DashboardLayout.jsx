@@ -25,9 +25,17 @@ export const DashboardLayout = ({ children }) => {
         py={4}
       >
         <Stack isInline spacing={6} alignItems="center">
-          <Logo />
-          <Link href="/">Feedback</Link>
-          <Link href="/">Sites</Link>
+          <NextLink href="/" passHref>
+            <Link>
+              <Logo />
+            </Link>
+          </NextLink>
+          <NextLink href="/sites" passHref>
+            <Link mr={4}>Sites</Link>
+          </NextLink>
+          <NextLink href="/feedback" passHref>
+            <Link>Feedback</Link>
+          </NextLink>
         </Stack>
         <Flex alignItems="center">
           <Link mr="4">Account</Link>

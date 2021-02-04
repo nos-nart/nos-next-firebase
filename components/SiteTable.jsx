@@ -14,7 +14,7 @@ export const SiteTable = ({ sites }) => {
             <Th>Site Link</Th>
             <Th>Feedback Link</Th>
             <Th>Date Added</Th>
-            {/* <Th width="50px">{''}</Th> */}
+            <Th width="50px">{''}</Th>
           </Tr>
         </thead>
         <tbody>
@@ -24,12 +24,23 @@ export const SiteTable = ({ sites }) => {
                 {site.name}
               </Td>
               <Td>
-                {site.url}
+                <Link href={site.url} isExternal>
+                  {site.url}
+                </Link>
               </Td>
               <Td>
-                <Link>Feedback link</Link>
+              <NextLink
+                  href="/site/[siteId]"
+                  as={`/site/${site.id}`}
+                  passHref
+                >
+                  <Link color="blue.500" fontWeight="medium">View feedback</Link>
+                </NextLink>
               </Td>
               <Td>{dayjs(site.createAt).format('MMM D, YYYY h:mm A')}</Td>
+              <Td>
+                <DeleteSiteButton siteId={site.id} />
+              </Td>
             </Box>
           ))}
         </tbody>
