@@ -10,11 +10,11 @@ import {
   Button
 } from '@chakra-ui/react';
 
-import { deleteFeedback } from '@/lib/firestore';
+import { deleteSite } from '@/lib/firestore';
 import { useAuth } from '@/lib/auth';
 import { DeleteIcon } from '@chakra-ui/icons';
 
-export const deleteSite = () => {
+export const DeleteSiteButton = () => {
   const [isOpen, setIsOpen] = React.useState();
   const cancelRef = React.useRef();
   const { user } = useAuth();
