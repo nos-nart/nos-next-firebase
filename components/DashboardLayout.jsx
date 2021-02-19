@@ -34,8 +34,8 @@ export const DashboardLayout = ({ children }) => {
           <NextLink href="/sites" passHref>
             <Link mr={4}>Sites</Link>
           </NextLink>
-          <NextLink href="/feedback" passHref>
-            <Link>Feedback</Link>
+          <NextLink href="/feedbacks" passHref>
+            <Link>Feedbacks</Link>
           </NextLink>
         </Stack>
         <Flex alignItems="center">
