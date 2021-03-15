@@ -18,7 +18,7 @@
     "framer-motion": "^3.3.0",
     "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
-    "next": "^10.0.5",
+    "next": "^10.0.6",
     "next-seo": "^4.19.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
