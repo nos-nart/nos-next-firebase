@@ -10,8 +10,8 @@
   "dependencies": {
     "@chakra-ui/icons": "^1.0.5",
     "@chakra-ui/react": "^1.1.5",
+    "@emotion/styled": "^11.1.5",
     "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.0.0",
     "dayjs": "^1.10.4",
     "firebase": "^8.2.6",
     "firebase-admin": "^9.4.2",
